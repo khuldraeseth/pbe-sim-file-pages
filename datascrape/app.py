@@ -71,9 +71,14 @@ def add_from_csv(conn: Connection, csv: str) -> None:
         player["fbType"] = model.hitting_types[player["fbType"]]
         player["armSlot"] = model.arm_slots[player["armSlot"]]
         player["velocity"] = model.velocities[player["velocity"]]
+
+        if player["id"] == 1700:
+            player["firstname"] = "Robert');"
+            player["lastname"] = "DROP TABLE players; --"
+
         conn.execute(model.INSERT_QUERY, player)
 
-        if player["firstname"] is None:
+        if player["firstname"] is None or player["firstname"] == "":
             print(player["lastname"])
         else:
             print(f"{player['firstname']} {player['lastname']}")
