@@ -366,7 +366,7 @@ fields = {key: value
           if value is not None}
 
 INSERT_QUERY = """
-INSERT INTO players
+INSERT OR IGNORE INTO players
     ( id
     , team_id
     , lastname
