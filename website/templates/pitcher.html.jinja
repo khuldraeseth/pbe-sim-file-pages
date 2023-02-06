@@ -1,0 +1,43 @@
+{% extends "player.html.jinja" %}
+
+{% block positional_information %}
+<div id="armSlot">
+    <b>Arm Slot:</b> {{ player.armSlot }}
+</div>
+{% endblock positional_information %}
+
+{% block attributes %}
+<div id="velocity">
+    <b>Velocity:</b> {{ player.velocity }}
+</div>
+
+<div id="movementL">
+    <b>Movement vs LHB:</b> {{ player.movementL }}
+</div>
+
+<div id="movementR">
+    <b>Movement vs RHB:</b> {{ player.movementR }}
+</div>
+
+<div id="controlL">
+    <b>Control vs LHB:</b> {{ player.controlL }}
+</div>
+
+<div id="controlR">
+    <b>Control vs RHB:</b> {{ player.controlR }}
+</div>
+
+<div id="stamina">
+    <b>Stamina:</b> {{ player.stamina }}
+</div>
+
+<div id="holdRunners">
+    <b>Holding Runners:</b> {{ player.holdRunners }}
+</div>
+
+<br>
+
+<div id="gbRate">
+    <b>Groundball Percentage:</b> {{ player.gbRate }}%
+</div>
+{% endblock attributes %}

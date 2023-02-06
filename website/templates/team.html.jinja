@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ name }}</title>
+</head>
+
+<body>
+    {% for player in players %}
+    <div>
+        {% if player.firstname %}
+        <a href="/players/{{ player.id }}/">{{ player.firstname }} {{ player.lastname }}</a>
+        {% else %}
+        <a href="/players/{{ player.id }}/">{{ player.lastname }}</a>
+        {% endif %}
+    </div>
+    {% endfor %}
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    {% if player.firstname %}
+    <title>{{ player.firstname }} {{ player.lastname }}</title>
+    {% else %}
+    <title>{{ player.lastname }}</title>
+    {% endif %}
+</head>
+
+<body>
+    {% block information %}
+    <div id="name">
+        {% if player.firstname %}
+        <b>Player name:</b> {{ player.firstname }} {{ player.lastname }}
+        {% else %}
+        <b>Player name:</b> {{ player.lastname }}
+        {% endif %}
+    </div>
+
+    <div id="birthdate">
+        <b>Birthdate:</b> {{ "{0:04}".format(player.birthYear) }}-{{ "{0:02}".format(player.birthMonth) }}-{{
+        "{0:02}".format(player.birthDay) }}
+    </div>
+
+    <div id="throws">
+        <b>Throws:</b> {{ player.throws }}
+    </div>
+
+    <div id="bats">
+        <b>Bats:</b> {{ player.bats }}
+    </div>
+
+    <div id="height">
+        <b>Height:</b> {{ player.height }} cm
+    </div>
+
+    <div id="weight">
+        <b>Weight:</b> {{ player.weight }} lb
+    </div>
+
+    <div id="birthplace">
+        <b>Birthplace:</b> {{ player.birthCity }}, {{ player.birthCountry }}
+    </div>
+
+    {% block positional_information %}{% endblock positional_information %}
+    {% endblock information %}
+
+    <br>
+
+    {% block attributes %}{% endblock attributes %}
+</body>
+
+</html>

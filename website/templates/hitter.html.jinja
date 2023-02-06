@@ -1,0 +1,81 @@
+{% extends "player.html.jinja" %}
+
+{% block positional_information %}
+<div id="hitterType">
+    <b>Hitting:</b> {{ player.gbType }}
+</div>
+{% endblock positional_information %}
+
+{% block attributes %}
+<div id="babipL">
+    <b>BABIP vs LHP:</b> {{ player.babipL }}
+</div>
+
+<div id="babipR">
+    <b>BABIP vs RHP:</b> {{ player.babipR }}
+</div>
+
+<div id="avoidkL">
+    <b>Avoid K's vs LHP:</b> {{ player.avoidkL }}
+</div>
+
+<div id="avoidkR">
+    <b>Avoid K's vs RHP:</b> {{ player.avoidkR }}
+</div>
+
+<div id="gapL">
+    <b>Gap vs LHP:</b> {{ player.gapL }}
+</div>
+
+<div id="gapR">
+    <b>Gap vs RHP:</b> {{ player.gapR }}
+</div>
+
+<div id="powerL">
+    <b>Power vs LHP:</b> {{ player.powerL }}
+</div>
+
+<div id="powerR">
+    <b>Power vs RHP:</b> {{ player.powerR }}
+</div>
+
+<div id="eyeL">
+    <b>Eye/Patience vs LHP:</b> {{ player.eyeL }}
+</div>
+
+<div id="eyeR">
+    <b>Eye/Patience vs RHP:</b> {{ player.eyeR }}
+</div>
+
+<div id="speed">
+    <b>Speed (base &amp; run):</b> {{ player.speed }}
+</div>
+
+<div id="steal">
+    <b>Stealing ability:</b> {{ player.steal }}
+</div>
+
+<div id="bunt">
+    <b>Bunting (both):</b> {{ player.buntSac }}
+</div>
+
+<div id="range">
+    <b>Fielding Range:</b> {{ player.rangeIf }}
+</div>
+
+<div id="error">
+    <b>Fielding Error:</b> {{ player.errorIf }}
+</div>
+
+<div id="arm">
+    <b>Fielding/Catching Arm:</b> {{ player.armIf }}
+</div>
+
+<div id="doublePlay">
+    <b>Turn Double Play:</b> {{ player.doublePlay }}
+</div>
+
+<div id="abilityC">
+    <b>Catcher Ability:</b> {{ player.abilityC }}
+</div>
+{% endblock attributes %}

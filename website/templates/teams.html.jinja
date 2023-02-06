@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>foo</title>
+</head>
+
+<body>
+    {% for team in teams %}
+    <div>
+        <a href="/teams/{{ team.abbreviation }}/">{{ " ".join((team.location, team.name)) }}</a>
+    </div>
+    {% endfor %}
+</body>
+
+</html>
