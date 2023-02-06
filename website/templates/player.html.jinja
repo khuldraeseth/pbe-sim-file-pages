@@ -11,6 +11,12 @@
 </head>
 
 <body>
+    <div id="raw">
+        <a href="{{ url_for('get_player', player_id=player.ID) }}">Click here to see raw player data</a>
+    </div>
+
+    <br>
+
     {% block information %}
     <div id="name">
         {% if player.firstname %}
