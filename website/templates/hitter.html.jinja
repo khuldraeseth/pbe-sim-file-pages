@@ -8,74 +8,74 @@
 
 {% block attributes %}
 <div id="babipL">
-    <b>BABIP vs LHP:</b> {{ player.babipL }}
+    <b>BABIP vs LHP:</b> {{ player.babipL // 2 }}
 </div>
 
 <div id="babipR">
-    <b>BABIP vs RHP:</b> {{ player.babipR }}
+    <b>BABIP vs RHP:</b> {{ player.babipR // 2 }}
 </div>
 
 <div id="avoidkL">
-    <b>Avoid K's vs LHP:</b> {{ player.avoidkL }}
+    <b>Avoid K's vs LHP:</b> {{ player.avoidkL // 2 }}
 </div>
 
 <div id="avoidkR">
-    <b>Avoid K's vs RHP:</b> {{ player.avoidkR }}
+    <b>Avoid K's vs RHP:</b> {{ player.avoidkR // 2 }}
 </div>
 
 <div id="gapL">
-    <b>Gap vs LHP:</b> {{ player.gapL }}
+    <b>Gap vs LHP:</b> {{ player.gapL // 2 }}
 </div>
 
 <div id="gapR">
-    <b>Gap vs RHP:</b> {{ player.gapR }}
+    <b>Gap vs RHP:</b> {{ player.gapR // 2 }}
 </div>
 
 <div id="powerL">
-    <b>Power vs LHP:</b> {{ player.powerL }}
+    <b>Power vs LHP:</b> {{ player.powerL // 2 }}
 </div>
 
 <div id="powerR">
-    <b>Power vs RHP:</b> {{ player.powerR }}
+    <b>Power vs RHP:</b> {{ player.powerR // 2 }}
 </div>
 
 <div id="eyeL">
-    <b>Eye/Patience vs LHP:</b> {{ player.eyeL }}
+    <b>Eye/Patience vs LHP:</b> {{ player.eyeL // 2 }}
 </div>
 
 <div id="eyeR">
-    <b>Eye/Patience vs RHP:</b> {{ player.eyeR }}
+    <b>Eye/Patience vs RHP:</b> {{ player.eyeR // 2 }}
 </div>
 
 <div id="speed">
-    <b>Speed (base &amp; run):</b> {{ player.speed }}
+    <b>Speed (base &amp; run):</b> {{ player.speed // 2 }}
 </div>
 
 <div id="steal">
-    <b>Stealing ability:</b> {{ player.steal }}
+    <b>Stealing ability:</b> {{ player.steal // 2 }}
 </div>
 
 <div id="bunt">
-    <b>Bunting (both):</b> {{ player.buntSac }}
+    <b>Bunting (both):</b> {{ player.buntSac // 2 }}
 </div>
 
 <div id="range">
-    <b>Fielding Range:</b> {{ player.rangeIf }}
+    <b>Fielding Range:</b> {{ player.rangeIf // 2 }}
 </div>
 
 <div id="error">
-    <b>Fielding Error:</b> {{ player.errorIf }}
+    <b>Fielding Error:</b> {{ player.errorIf // 2 }}
 </div>
 
 <div id="arm">
-    <b>Fielding/Catching Arm:</b> {{ player.armIf }}
+    <b>Fielding/Catching Arm:</b> {{ player.armIf // 2 }}
 </div>
 
 <div id="doublePlay">
-    <b>Turn Double Play:</b> {{ player.doublePlay }}
+    <b>Turn Double Play:</b> {{ player.doublePlay // 2 }}
 </div>
 
 <div id="abilityC">
-    <b>Catcher Ability:</b> {{ player.abilityC }}
+    <b>Catcher Ability:</b> {{ player.abilityC // 2 }}
 </div>
 {% endblock attributes %}
