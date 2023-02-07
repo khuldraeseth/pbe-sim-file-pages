@@ -8,13 +8,39 @@ from website.framework import access_db
 
 def view_pitcher(player: Row) -> str:
     """View a pitcher."""
-    return flask.render_template("pitcher.html.jinja", player=player)
+    PITCH_NAMES = {
+        "fastball": "Fastball",
+        "slider": "Slider",
+        "curve": "Curveball",
+        "change": "Changeup",
+        "cutter": "Cutter",
+        "sinker": "Sinker",
+        "splitter": "Splitter",
+        "fork": "Forkball",
+        "screw": "Screwball",
+        "circle": "Circle Change",
+        "kCurve": "Knuckle Curve",
+        "knuckle": "Knuckleball",
+    }
+
+    pitches = [
+        (name, player[pitch])
+        for pitch, name in PITCH_NAMES.items()
+        if player[pitch] > 0
+    ]
+    pitches.sort(key=lambda pitch: pitch[1], reverse=True)
+
+    return flask.render_template(
+        "pitcher.html.jinja",
+        player=player,
+        pitches=pitches
+    )
 
 
 def view_hitter(player: Row) -> str:
     """View a batter."""
-    positions = ("P", "C", "1B", "2B", "3B", "SS", "LF", "CF", "RF")
-    exp = {pos: player[f"exp{pos}"] for pos in positions}
+    POSITIONS = ("P", "C", "1B", "2B", "3B", "SS", "LF", "CF", "RF")
+    exp = {pos: player[f"exp{pos}"] for pos in POSITIONS}
 
     primaries = [pos for pos, value in exp.items() if value >= 200]
     secondaries = [pos for pos, value in exp.items() if value >= 150]

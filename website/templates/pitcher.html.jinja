@@ -37,6 +37,14 @@
 
 <br>
 
+{% for pitch, rating in pitches %}
+<div id="{{ pitch }}">
+    <b>{{ pitch }}:</b> {{ rating // 2 }}
+</div>
+{% endfor %}
+
+<br>
+
 <div id="gbRate">
     <b>Groundball Percentage:</b> {{ player.gbRate }}%
 </div>
