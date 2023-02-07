@@ -78,4 +78,18 @@
 <div id="abilityC">
     <b>Catcher Ability:</b> {{ player.abilityC // 2 }}
 </div>
+
+<br>
+
+<div id="pos1">
+    <b>Position 1:</b> {% for pos in positions.1 %}{{ pos }}{{ ", " if not loop.last else "" }}{% endfor %}
+</div>
+
+<div id="pos2">
+    <b>Position 2:</b> {% for pos in positions.2 %}{{ pos }}{{ ", " if not loop.last else "" }}{% endfor %}
+</div>
+
+<div id="pos3">
+    <b>Position 3:</b> {% for pos in positions.3 %}{{ pos }}{{ ", " if not loop.last else "" }}{% endfor %}
+</div>
 {% endblock attributes %}
