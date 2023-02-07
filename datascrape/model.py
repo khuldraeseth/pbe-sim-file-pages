@@ -1,6 +1,5 @@
 """The datascrape data model."""
 
-
 from typing import Any, TypedDict
 
 
@@ -11,12 +10,6 @@ def transform(untyped: dict[str, str],
     return {name: fields[name](value)
             for name, value in untyped.items()
             if name is not None}
-    # result: dict[str, Any] = {}
-    # for name, value in untyped.items():
-    #    if name not in fields:
-    #        print(f"{name} not in fields")
-    #    result[name] = fields[name](value)
-    # return result
 
 
 player_fields = {
