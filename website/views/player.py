@@ -6,6 +6,16 @@ from website.app import app
 from website.framework import access_db
 
 
+def pitcher_notes(player: Row) -> list[str]:
+    """Create a list of notes for a pitcher."""
+    return []
+
+
+def hitter_notes(player: Row) -> list[str]:
+    """Create a list of notes for a hitter."""
+    return []
+
+
 def view_pitcher(player: Row) -> str:
     """View a pitcher."""
     PITCH_NAMES = {
@@ -30,10 +40,13 @@ def view_pitcher(player: Row) -> str:
     ]
     pitches.sort(key=lambda pitch: pitch[1], reverse=True)
 
+    notes = pitcher_notes(player)
+
     return flask.render_template(
         "pitcher.html.jinja",
         player=player,
-        pitches=pitches
+        pitches=pitches,
+        notes=notes,
     )
 
 
@@ -45,10 +58,14 @@ def view_hitter(player: Row) -> str:
     primaries = [pos for pos, value in exp.items() if value >= 200]
     secondaries = [pos for pos, value in exp.items() if value >= 150]
     tertiaries = [pos for pos, value in exp.items() if value >= 100]
+
+    notes = hitter_notes(player)
+
     return flask.render_template(
         "hitter.html.jinja",
         player=player,
-        positions={1: primaries, 2: secondaries, 3: tertiaries}
+        positions={1: primaries, 2: secondaries, 3: tertiaries},
+        notes=notes,
     )
 
 

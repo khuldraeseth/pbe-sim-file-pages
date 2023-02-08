@@ -57,6 +57,19 @@
     <br>
 
     {% block attributes %}{% endblock attributes %}
+
+    {% if notes %}
+    <br>
+
+    <div id="notes">
+        <b>Notes:</b>
+        <ul>
+            {% for note in notes %}
+            <li>{{ note }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
 </body>
 
 </html>
