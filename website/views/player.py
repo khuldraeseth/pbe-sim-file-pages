@@ -156,7 +156,7 @@ def view_player(conn: Connection, player_id: int) -> str:
         flask.abort(404, f"Player {player_id} not found.")
 
     match player["position"]:
-        case "P" | "SP" | "RP" | "CP" | "CF":
+        case "P" | "SP" | "RP" | "CP":
             return view_pitcher(player)
         case "C" | "1B" | "2B" | "3B" | "SS" | "LF" | "CF" | "RF" | "DH":
             return view_hitter(player)
